@@ -1,0 +1,52 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "ssmmessages:CreateControlChannel",
+              "ssmmessages:CreateDataChannel",
+              "ssmmessages:OpenControlChannel",
+              "ssmmessages:OpenDataChannel"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:DescribeLogGroups"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:CreateLogStream",
+              "logs:DescribeLogStreams",
+              "logs:PutLogEvents"
+          ],
+          "Resource": "arn:aws:logs:us-east-1:988857891049:log-group:/aws/ecs/ecs-exec-demo:*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "s3:PutObject"
+          ],
+          "Resource": "arn:aws:s3:::ecs-exec-demo-output-12kkda9d93/*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "s3:GetEncryptionConfiguration"
+          ],
+          "Resource": "arn:aws:s3:::ecs-exec-demo-output-12kkda9d93"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "kms:Decrypt"
+          ],
+          "Resource": "arn:aws:kms:us-east-1:988857891049:key/53c6ea1e-5fa0-4295-bce3-08532109abb7"
+      }
+  ]
+}

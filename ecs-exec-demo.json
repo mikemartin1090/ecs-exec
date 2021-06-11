@@ -1,0 +1,26 @@
+{"family": "ecs-exec-demo",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "arn:aws:iam::988857891049:role/ecs-exec-demo-task-execution-role",
+  "taskRoleArn": "arn:aws:iam::988857891049:role/ecs-exec-demo-task-role",
+  "containerDefinitions": [
+      {"name": "nginx",
+          "image": "nginx",
+          "linuxParameters": {
+              "initProcessEnabled": true
+          },
+          "logConfiguration": {
+              "logDriver": "awslogs",
+                  "options": {
+                     "awslogs-group": "/aws/ecs/ecs-exec-demo",
+                     "awslogs-region": "us-east-1",
+                     "awslogs-stream-prefix": "container-stdout"
+                  }
+          }
+      }
+  ],
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512"
+}

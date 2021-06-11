@@ -1,0 +1,12 @@
+Script started on 2021-06-11 00:37:39+00:00 [<not executed on terminal>]
+root@ip-172-25-80-51:/# hostname
+ip-172-25-80-51.ec2.internal
+root@ip-172-25-80-51:/# ls
+bin   docker-entrypoint.d   home   managed-agents  opt	 run   sys  var
+boot  docker-entrypoint.sh  lib    media	   proc  sbin  tmp
+dev   etc		    lib64  mnt		   root  srv   usr
+root@ip-172-25-80-51:/# cu[K[K[Kroot@ip-172-25-80-51:/# echo "This page has been created with ECS Exec" > /usr/share/nginx/html/index.html
+root@ip-172-25-80-51:/# exit
+exit
+
+Script done on 2021-06-11 00:37:39+00:00 [COMMAND_EXIT_CODE="0"]
